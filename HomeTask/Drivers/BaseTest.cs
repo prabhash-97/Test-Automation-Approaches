@@ -14,7 +14,8 @@ namespace HomeTask.Drivers
 
         public void BrowserSetup()
         {
-            driver = new ChromeDriver();
+            FactoryWebDriver factory = new FactoryWebDriver();
+            driver = factory.CreateInstance("Chrome");
             driver.Manage().Window.Maximize();
             driver.Url = "https://demo.guru99.com/test/login.html";
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);
