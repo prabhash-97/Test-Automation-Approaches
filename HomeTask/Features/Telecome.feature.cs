@@ -73,6 +73,15 @@ namespace HomeTask.Features
             testRunner.CollectScenarioErrors();
         }
         
+        public virtual void FeatureBackground()
+        {
+#line 4
+#line hidden
+#line 5
+ testRunner.Given("user in the telecome page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+        }
+        
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("verify user can succefuly register]")]
         [NUnit.Framework.CategoryAttribute("tag1")]
@@ -82,7 +91,7 @@ namespace HomeTask.Features
                     "tag1"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("verify user can succefuly register]", null, tagsOfScenario, argumentsOfScenario, this._featureTags);
-#line 6
+#line 8
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -102,31 +111,31 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 7
- testRunner.Given("user in the telecome page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 4
+this.FeatureBackground();
 #line hidden
-#line 8
+#line 9
  testRunner.When("user tick radion button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-                TechTalk.SpecFlow.Table table2 = new TechTalk.SpecFlow.Table(new string[] {
+                TechTalk.SpecFlow.Table table1 = new TechTalk.SpecFlow.Table(new string[] {
                             "firstname",
                             "lastname",
                             "email",
                             "address",
                             "mobilenumber"});
-                table2.AddRow(new string[] {
+                table1.AddRow(new string[] {
                             "test",
                             "user",
                             "test@gmail.com",
                             "TestVillage",
                             "0911111111"});
-#line 9
- testRunner.When("user enter firstname, lastname,email, address and mobilenumber", ((string)(null)), table2, "When ");
-#line hidden
-#line 12
- testRunner.When("user clicks on the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 10
+ testRunner.Given("new user enter firstname, lastname, email, address and mobilenumber", ((string)(null)), table1, "Given ");
 #line hidden
 #line 13
+ testRunner.When("user clicks on the submit button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 14
  testRunner.Then("user navigate to access_detail page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

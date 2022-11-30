@@ -1,15 +1,18 @@
 ﻿Feature: LoginPage
 
 A short summary of the feature
-
-@tag1
-Scenario: verify user can succesfully login to the system]
+Background:
 	Given user in the login page
-	When user enter username and password
-		| Username      | Password     |
-		| standard_user | secret_sauce |
+ 
+@tag1
+Scenario Outline: verify user can succesfully login to the system
+	Given user enter <username> and <password>
 	When user clicks on the login button
 	Then user navigate to home page
+
+Examples: 
+	| Username      | Password     |
+	| standard_user | secret_sauce |
 
 
 

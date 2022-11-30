@@ -16,7 +16,6 @@ namespace HomeTask.StepDefinitions
         LoginPage loginPO;
         BaseTest baseTestPO = new BaseTest();
 
-
         [Given(@"user in the login page")]
         public void GivenUserInTheLoginPage()
         {
@@ -24,13 +23,12 @@ namespace HomeTask.StepDefinitions
             loginPO = new LoginPage();
         }
 
-        [When(@"user enter username and password")]
-        public void WhenUserEnterUsernameAndPassword(Table table)
+        [Given(@"user enter (.*) (.*)")]
+        public void GivenUserEnterUsernameAndPassword(string username, string pasaword)
         {
-            dynamic data = table.CreateDynamicInstance();
-            loginPO.addloginCerditionals((string)data.Username, (string)data.Password);
-
+            loginPO.addloginCerditionals(username, pasaword);
         }
+
 
         [When(@"user clicks on the login button")]
         public void WhenUserClicksOnTheLoginButton()

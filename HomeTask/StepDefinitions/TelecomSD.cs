@@ -30,12 +30,13 @@ namespace HomeTask.StepDefinitions
             telecomePO.selectRdioBtn();
         }
 
-        [When(@"user enter firstname, lastname,email, address and mobilenumber")]
-        public void WhenUserEnterFirstnameLastnameEmailAddressAndMobilenumber(Table table)
+        [Given(@"new user enter firstname, lastname, email, address and mobilenumber")]
+        public void GivenNewUserEnterFirstnameLastnameEmailAddressAndMobilenumber(Table table)
         {
             dynamic data = table.CreateDynamicInstance();
             telecomePO.adduserDetails((string)data.firstname, (string)data.lastname, (string)data.email, (string)data.address);
         }
+
 
         [When(@"user clicks on the submit button")]
         public void WhenUserClicksOnTheSubmitButton()
